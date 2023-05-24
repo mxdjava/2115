@@ -9,11 +9,14 @@ import java.util.List;
 public class UserDaoJDBCImpl implements UserDao {
     private Connection connection;
 
+    public UserDaoJDBCImpl() {
+    }
+
     public UserDaoJDBCImpl(Connection connection) {
         this.connection = connection;
     }
 
-    public void createUsersTable() throws SQLException {
+    public void createUsersTable() {
 
         try (Statement statement = connection.createStatement()) {
             statement.executeUpdate("CREATE TABLE IF NOT EXISTS users (" +

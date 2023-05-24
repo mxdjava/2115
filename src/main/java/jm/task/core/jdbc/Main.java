@@ -10,7 +10,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class Main {
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+    public static void main(String[] args) throws SQLException {
         /*Util util = new Util();
         try {
             Util.getConnection();
@@ -26,8 +26,8 @@ public class Main {
         userServiceImpl.saveUser("Georgy", "Akopyan", (byte) 55);
         userServiceImpl.saveUser("Moisei", "Zukerman", (byte) 20);
         userServiceImpl.saveUser("Zamir", "Zakiev", (byte) 62);
-        userServiceImpl.getAllUsers();
+//        userServiceImpl.getAllUsers();
 //        userServiceImpl.cleanUsersTable();
-//        userServiceImpl.dropUsersTable();
+        userServiceImpl.dropUsersTable();
     }
 }

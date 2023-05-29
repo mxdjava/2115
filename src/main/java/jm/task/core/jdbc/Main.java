@@ -11,23 +11,15 @@ import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
-        /*Util util = new Util();
-        try {
-            Util.getConnection();
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }*/
-        Connection connection = Util.getConnection();
-        UserDao userDao = new UserDaoJDBCImpl(connection);
-        UserService userServiceImpl = new UserServiceImpl(userDao);
+        UserService userService = new UserServiceImpl(/*userDao*/);
 
-        userServiceImpl.createUsersTable();
-        userServiceImpl.saveUser("Vasya", "Popov", (byte) 34);
-        userServiceImpl.saveUser("Georgy", "Akopyan", (byte) 55);
-        userServiceImpl.saveUser("Moisei", "Zukerman", (byte) 20);
-        userServiceImpl.saveUser("Zamir", "Zakiev", (byte) 62);
-//        userServiceImpl.getAllUsers();
-//        userServiceImpl.cleanUsersTable();
-        userServiceImpl.dropUsersTable();
+        userService.createUsersTable();
+        userService.saveUser("Vasya", "Popov", (byte) 34);
+        userService.saveUser("Georgy", "Akopyan", (byte) 55);
+        userService.saveUser("Moisei", "Zukerman", (byte) 20);
+        userService.saveUser("Zamir", "Zakiev", (byte) 62);
+        userService.getAllUsers();
+//        userService.cleanUsersTable();
+//        userService.dropUsersTable();
     }
 }

@@ -21,9 +21,6 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
     public UserDaoJDBCImpl() {
     }
 
-    public UserDaoJDBCImpl(Connection connection) {
-        this.connection = connection;
-    }
     @Override
     public void createUsersTable() {
 

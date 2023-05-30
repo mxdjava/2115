@@ -19,7 +19,7 @@ public class Util {
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Connection error");
         }
-        connection.setAutoCommit(false);
+//        connection.setAutoCommit(false);
         return connection;
     }
 }

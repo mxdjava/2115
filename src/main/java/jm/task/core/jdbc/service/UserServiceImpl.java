@@ -14,10 +14,6 @@ public class UserServiceImpl extends Util implements UserService {
     public UserServiceImpl() {
     }
 
-    public UserServiceImpl(UserDao userDao) {
-        this.userDao = userDao;
-    }
-
     public void createUsersTable() throws SQLException {
         userDao.createUsersTable();
     }

@@ -19,10 +19,11 @@ public class User {
     @Column
     private Byte age;
 
-    public User(long id, String name, String lastName, byte age) {
+    public User() {
     }
 
-    public User(String name, String lastName, Byte age) {
+    public User(long id, String name, String lastName, byte age) {
+        this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.age = age;

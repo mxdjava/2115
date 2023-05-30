@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
-        UserService userService = new UserServiceImpl(/*userDao*/);
+        UserService userService = new UserServiceImpl();
 
         userService.createUsersTable();
         userService.saveUser("Vasya", "Popov", (byte) 34);
@@ -19,7 +19,7 @@ public class Main {
         userService.saveUser("Moisei", "Zukerman", (byte) 20);
         userService.saveUser("Zamir", "Zakiev", (byte) 62);
         userService.getAllUsers();
-//        userService.cleanUsersTable();
-//        userService.dropUsersTable();
+        userService.cleanUsersTable();
+        userService.dropUsersTable();
     }
 }

@@ -37,8 +37,6 @@ public class UserServiceImpl extends Util implements UserService {
     }
 
     public List<User> getAllUsers() {
-//        System.out.println(userDao.getAllUsers());
-//        return userDao.getAllUsers();
         List<User> users =  userDao.getAllUsers();
         for (User user : users) {
             System.out.println(user);

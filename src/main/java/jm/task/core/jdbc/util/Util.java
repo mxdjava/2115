@@ -19,7 +19,11 @@ public class Util {
     public static final String DB_PASSWORD = "Mirazebl815784_";
     private static SessionFactory sessionFactory;
 
-    public static Connection getConnection() throws SQLException {
+    public Util(){
+
+    }
+
+    /*public static Connection getConnection() throws SQLException {
         Connection connection = null;
         try {
             Class.forName(DB_DRIVER);
@@ -29,7 +33,7 @@ public class Util {
             System.out.println("Connection error");
         }
         return connection;
-    }
+    }*/
 
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
@@ -43,7 +47,7 @@ public class Util {
                 settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
                 settings.put(Environment.SHOW_SQL, "true");
                 settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
-                settings.put(Environment.HBM2DDL_AUTO, "");
+                settings.put(Environment.HBM2DDL_AUTO, "create-drop");
                 configuration.setProperties(settings).addAnnotatedClass(User.class);
 
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()

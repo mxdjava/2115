@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class UserServiceImpl extends Util implements UserService {
-    private UserDao userDao = new UserDaoHibernateImpl();
+    private final UserDao userDao = new UserDaoHibernateImpl();
 
     public UserServiceImpl() {
     }
@@ -38,7 +38,7 @@ public class UserServiceImpl extends Util implements UserService {
     }
 
     public List<User> getAllUsers() {
-        List<User> users =  userDao.getAllUsers();
+        List<User> users = userDao.getAllUsers();
         for (User user : users) {
             System.out.println(user);
         }
